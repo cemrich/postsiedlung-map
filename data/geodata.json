@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "properties": {
+    "name": "Name",
+    "popupContent": "Popup Content"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [8.63896, 49.85672]
+  }
+}
