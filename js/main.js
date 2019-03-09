@@ -14,10 +14,27 @@
 	}
 
 	function onGeodataLoaded(json) {
-		console.log(json);
 		var dataLayer = L.geoJSON(json, { onEachFeature: onEachFeature });
 		dataLayer.addTo(map);
 	}
+
+	function onOutlineLoaded(json) {
+		var style = {
+		    "color": "#000000",
+		    "weight": 0
+		};
+
+		var dataLayer = L.geoJSON(json, {
+			invert: true,
+		 	style: style
+		});
+		dataLayer.addTo(map);
+	}
+
+	// load outline
+	fetch('data/outline.geojson')
+		.then(response => response.json())
+		.then(onOutlineLoaded);
 
 	// load geo data
 	fetch('data/geodata.json')
