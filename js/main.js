@@ -3,7 +3,7 @@
 	var map = new L.map('map');
 	map.setView([49.85672, 8.63896], 16);
 
-	var osm = new L.StamenTileLayer("toner");
+	var osm = new L.StamenTileLayer('terrain');
 	map.addLayer(osm);
 
 	var CustomIcon = L.Icon.Default.extend({
