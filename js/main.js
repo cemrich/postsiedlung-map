@@ -6,15 +6,30 @@
 	var osm = new L.StamenTileLayer("toner");
 	map.addLayer(osm);
 
+	var CustomIcon = L.Icon.Default.extend({
+		options: {
+			imagePath: '../../../img/',
+			shadowUrl: 'marker-shadow.png'
+		}
+	});
+	var customIconBlue = new CustomIcon({ iconUrl: 'marker-icon.png' });
+
 	function onEachFeature(feature, layer) {
 		// does this feature have a property named popupContent?
-		if (feature.properties && feature.properties.popupContent) {
-			layer.bindPopup(feature.properties.name + "<br>" + feature.properties.popupContent);
+		if (feature.properties && feature.properties.name) {
+			layer.bindPopup(feature.properties.name);
 		}
 	}
 
+	function pointToLayer(feature, latlng) {
+		return L.marker(latlng, { icon: customIconBlue });
+	}
+
 	function onGeodataLoaded(json) {
-		var dataLayer = L.geoJSON(json, { onEachFeature: onEachFeature });
+		var dataLayer = L.geoJSON(json, {
+			onEachFeature: onEachFeature,
+			pointToLayer: pointToLayer
+		});
 		dataLayer.addTo(map);
 	}
 

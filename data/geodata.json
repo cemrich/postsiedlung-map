@@ -1,11 +1,19 @@
 {
-  "type": "Feature",
-  "properties": {
-    "name": "Name",
-    "popupContent": "Popup Content"
-  },
-  "geometry": {
-    "type": "Point",
-    "coordinates": [8.63896, 49.85672]
-  }
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.638927213543438,
+          49.85750935735035
+        ]
+      },
+      "properties": {
+        "name": "Quartierladen",
+        "catergory": "building"
+      }
+    }
+  ]
 }
