@@ -3,7 +3,7 @@
 	var map = new L.map('map');
 	map.setView([49.85672, 8.63896], 16);
 
-	var osm = new L.StamenTileLayer('terrain');
+	var osm = new L.StamenTileLayer('toner');
 	map.addLayer(osm);
 
 	var CustomIcon = L.Icon.Default.extend({
@@ -26,9 +26,17 @@
 	}
 
 	function onGeodataLoaded(json) {
+		var style = {
+		    "color": "#77b756",
+		    "weight": 1,
+				"opacity": 1,
+				"fillOpacity": 0.2
+		};
+
 		var dataLayer = L.geoJSON(json, {
 			onEachFeature: onEachFeature,
-			pointToLayer: pointToLayer
+			pointToLayer: pointToLayer,
+			style: style
 		});
 		dataLayer.addTo(map);
 	}
