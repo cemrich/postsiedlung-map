@@ -12,7 +12,9 @@
 			shadowUrl: 'marker-shadow.png'
 		}
 	});
-	var customIconBlue = new CustomIcon({ iconUrl: 'marker-icon.png' });
+	var customIcon = new CustomIcon({ iconUrl: 'marker-icon.png' });
+	var customIconPlayground = new CustomIcon({ iconUrl: 'marker-icon-playground.png' });
+	var customIconBuilding = new CustomIcon({ iconUrl: 'marker-icon-building.png' });
 
 	function onEachFeature(feature, layer) {
 		// does this feature have a property named popupContent?
@@ -21,17 +23,35 @@
 		}
 	}
 
+	function getIcon(feature) {
+		switch (feature.properties.catergory) {
+			case "playground": return customIconPlayground;
+			case "building": return customIconBuilding;
+			default: return customIcon;
+		}
+	}
+
+	function getColor(feature) {
+		switch (feature.properties.catergory) {
+			case "park": return "#77b756";
+			case "school": return "#fdcc31";
+			default: return "#000000";
+		}
+	}
+
 	function pointToLayer(feature, latlng) {
-		return L.marker(latlng, { icon: customIconBlue });
+		return L.marker(latlng, { icon: getIcon(feature) });
 	}
 
 	function onGeodataLoaded(json) {
-		var style = {
-		    "color": "#77b756",
-		    "weight": 1,
-				"opacity": 1,
-				"fillOpacity": 0.2
-		};
+		function style(feature) {
+	    return {
+		    color: getColor(feature),
+		    weight: 1,
+				opacity: 1,
+				fillOpacity: 0.2
+	    };
+		}
 
 		var dataLayer = L.geoJSON(json, {
 			onEachFeature: onEachFeature,
