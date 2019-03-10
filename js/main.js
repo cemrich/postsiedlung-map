@@ -24,7 +24,7 @@
 	}
 
 	function getIcon(feature) {
-		switch (feature.properties.catergory) {
+		switch (feature.properties.category) {
 			case "playground": return customIconPlayground;
 			case "building": return customIconBuilding;
 			default: return customIcon;
@@ -32,7 +32,7 @@
 	}
 
 	function getColor(feature) {
-		switch (feature.properties.catergory) {
+		switch (feature.properties.category) {
 			case "park": return "#77b756";
 			case "school": return "#fdcc31";
 			default: return "#000000";
@@ -53,12 +53,28 @@
 	    };
 		}
 
-		var dataLayer = L.geoJSON(json, {
-			onEachFeature: onEachFeature,
-			pointToLayer: pointToLayer,
-			style: style
-		});
-		dataLayer.addTo(map);
+		function categoryFilter(feature, layer) {
+			return feature.properties.category === category;
+		}
+
+		var categories = new Set(json.features.map(feature => feature.properties.category));
+		var layerControl = {};
+
+		for (var category of categories) {
+			var dataLayer = L.geoJSON(json, {
+				onEachFeature: onEachFeature,
+				pointToLayer: pointToLayer,
+				style: style,
+				filter: categoryFilter
+			});
+
+			layerControl[category] = dataLayer;
+			dataLayer.addTo(map);
+		}
+
+		L.control.layers(null, layerControl, {
+			collapsed: false
+		}).addTo(map);
 	}
 
 	function onOutlineLoaded(json) {

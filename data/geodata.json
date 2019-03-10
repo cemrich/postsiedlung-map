@@ -12,14 +12,14 @@
       },
       "properties": {
         "name": "Quartierladen",
-        "catergory": "building"
+        "category": "building"
       }
     },
     {
       "type": "Feature",
       "properties": {
         "name": "?",
-        "catergory": "building"
+        "category": "building"
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +33,7 @@
       "type": "Feature",
       "properties": {
         "name": "Kiosk",
-        "catergory": "building"
+        "category": "building"
       },
       "geometry": {
         "type": "Point",
@@ -46,7 +46,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "playground",
+        "category": "playground",
         "name": "Spielplatz"
       },
       "geometry": {
@@ -60,7 +60,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "playground",
+        "category": "playground",
         "name": "Spielplatz"
       },
       "geometry": {
@@ -74,7 +74,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "playground",
+        "category": "playground",
         "name": "Spielplatz"
       },
       "geometry": {
@@ -89,7 +89,7 @@
       "type": "Feature",
       "properties": {
         "name": "Spielplatz",
-        "catergory": "playground"
+        "category": "playground"
       },
       "geometry": {
         "type": "Point",
@@ -102,7 +102,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "park",
+        "category": "park",
         "name": "Ingelheimer Garten"
       },
       "geometry": {
@@ -136,7 +136,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "park",
+        "category": "park",
         "name": "Akaziengarten"
       },
       "geometry": {
@@ -203,7 +203,7 @@
       "type": "Feature",
       "properties": {
         "name": "Heinrich-Heine-Schule",
-        "catergory": "school"
+        "category": "school"
       },
       "geometry": {
         "type": "Polygon",
@@ -248,7 +248,7 @@
     {
       "type": "Feature",
       "properties": {
-        "catergory": "school",
+        "category": "school",
         "name": "Wilhelm-Leuschner-Schule"
       },
       "geometry": {
