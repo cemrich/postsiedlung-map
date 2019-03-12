@@ -2,7 +2,7 @@
 
 	var CustomIcon = L.Icon.Default.extend({
 		options: {
-			imagePath: '../../../img/markers/',
+			imagePath: 'img/markers/',
 			shadowUrl: 'marker-shadow.png'
 		}
 	});
