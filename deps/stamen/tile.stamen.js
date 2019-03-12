@@ -7,7 +7,7 @@
 var SUBDOMAINS = "a. b. c. d.".split(" "),
     MAKE_PROVIDER = function(layer, type, minZoom, maxZoom) {
         return {
-            "url":          ["http://{S}tile.stamen.com/", layer, "/{Z}/{X}/{Y}.", type].join(""),
+            "url":          ["https://stamen-tiles.a.ssl.fastly.net/", layer, "/{Z}/{X}/{Y}.", type].join(""),
             "type":         type,
             "subdomains":   SUBDOMAINS.slice(),
             "minZoom":      minZoom,
@@ -26,7 +26,7 @@ var SUBDOMAINS = "a. b. c. d.".split(" "),
         "terrain-classic": MAKE_PROVIDER("terrain-classic", "png", 0, 18),
         "watercolor":   MAKE_PROVIDER("watercolor", "jpg", 1, 18),
         "trees-cabs-crime": {
-            "url": "http://{S}.tiles.mapbox.com/v3/stamen.trees-cabs-crime/{Z}/{X}/{Y}.png",
+            "url": "https://{S}.tiles.mapbox.com/v3/stamen.trees-cabs-crime/{Z}/{X}/{Y}.png",
             "type": "png",
             "subdomains": "a b c d".split(" "),
             "minZoom": 11,
@@ -44,7 +44,7 @@ var SUBDOMAINS = "a. b. c. d.".split(" "),
         }
     };
 
-PROVIDERS["terrain-classic"].url = "http://{S}tile.stamen.com/terrain/{Z}/{X}/{Y}.png";
+PROVIDERS["terrain-classic"].url = "https://stamen-tiles.a.ssl.fastly.net/terrain/{Z}/{X}/{Y}.png";
 
 // set up toner and terrain flavors
 setupFlavors("toner", ["hybrid", "labels", "lines", "background", "lite"]);
