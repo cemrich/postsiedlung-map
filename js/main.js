@@ -8,7 +8,7 @@
 
 	var CustomIcon = L.Icon.Default.extend({
 		options: {
-			imagePath: '../../../img/',
+			imagePath: '../../../img/markers/',
 			shadowUrl: 'marker-shadow.png'
 		}
 	});
@@ -16,10 +16,15 @@
 	var customIconPlayground = new CustomIcon({ iconUrl: 'marker-icon-playground.png' });
 	var customIconBuilding = new CustomIcon({ iconUrl: 'marker-icon-building.png' });
 
+	function getPopupContent(feature) {
+		//return feature.properties.name;
+		return "<h1>" + feature.properties.name + "</h1><img src='img/locations/dummy.jpg' />";
+	}
+
 	function onEachFeature(feature, layer) {
 		// does this feature have a property named popupContent?
 		if (feature.properties && feature.properties.name) {
-			layer.bindPopup(feature.properties.name);
+			layer.bindPopup(getPopupContent(feature));
 		}
 	}
 
