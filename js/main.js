@@ -1,20 +1,37 @@
 (function () {
 
-	var map = new L.map('map');
-	map.setView([49.85672, 8.63896], 16);
-
-	var osm = new L.StamenTileLayer('toner');
-	map.addLayer(osm);
-
 	var CustomIcon = L.Icon.Default.extend({
 		options: {
 			imagePath: '../../../img/markers/',
 			shadowUrl: 'marker-shadow.png'
 		}
 	});
-	var customIcon = new CustomIcon({ iconUrl: 'marker-icon.png' });
-	var customIconPlayground = new CustomIcon({ iconUrl: 'marker-icon-playground.png' });
-	var customIconBuilding = new CustomIcon({ iconUrl: 'marker-icon-building.png' });
+
+	class Category {
+		static getForFeature(feature) {
+			return Category.all[feature.properties.category];
+		}
+
+		constructor(id, name, color) {
+			this.id = id;
+			this.name = name;
+			this.color = color;
+			this.icon = new CustomIcon({ iconUrl: 'marker-icon-' + this.id + '.png' });
+		}
+	}
+
+	Category.all = {
+		"playground": new Category("playground", "Spielplatz", "#000000"),
+		"school": new Category("school", "Schule", "#fdcc31"),
+		"building": new Category("building", "Gebäude", "#000000"),
+		"park": new Category("park", "Park", "#77b756")
+	};
+
+	var map = new L.map('map');
+	map.setView([49.85672, 8.63896], 16);
+
+	var osm = new L.StamenTileLayer('toner');
+	map.addLayer(osm);
 
 	function getPopupContent(feature) {
 		//return feature.properties.name;
@@ -28,30 +45,16 @@
 		}
 	}
 
-	function getIcon(feature) {
-		switch (feature.properties.category) {
-			case "playground": return customIconPlayground;
-			case "building": return customIconBuilding;
-			default: return customIcon;
-		}
-	}
-
-	function getColor(feature) {
-		switch (feature.properties.category) {
-			case "park": return "#77b756";
-			case "school": return "#fdcc31";
-			default: return "#000000";
-		}
-	}
-
 	function pointToLayer(feature, latlng) {
-		return L.marker(latlng, { icon: getIcon(feature) });
+		var category = Category.getForFeature(feature);
+		return L.marker(latlng, { icon: category.icon });
 	}
 
 	function onGeodataLoaded(json) {
 		function style(feature) {
+			var category = Category.getForFeature(feature);
 	    return {
-		    color: getColor(feature),
+		    color: category.color,
 		    weight: 1,
 				opacity: 1,
 				fillOpacity: 0.2
@@ -59,13 +62,12 @@
 		}
 
 		function categoryFilter(feature, layer) {
-			return feature.properties.category === category;
+			return feature.properties.category === category.id;
 		}
 
-		var categories = new Set(json.features.map(feature => feature.properties.category));
 		var layerControl = {};
 
-		for (var category of categories) {
+		for (var category of Object.values(Category.all)) {
 			var dataLayer = L.geoJSON(json, {
 				onEachFeature: onEachFeature,
 				pointToLayer: pointToLayer,
@@ -73,7 +75,7 @@
 				filter: categoryFilter
 			});
 
-			layerControl[category] = dataLayer;
+			layerControl[category.name] = dataLayer;
 			dataLayer.addTo(map);
 		}
 
