@@ -33,15 +33,30 @@
 	var osm = new L.StamenTileLayer('toner');
 	map.addLayer(osm);
 
-	function getPopupContent(feature) {
-		return "<h1>" + feature.properties.name + "</h1>";
-		//return "<h1>" + feature.properties.name + "</h1><img src='img/locations/dummy.jpg' />";
+	function onPopupOpen(feature) {
+		infoPanel.querySelector(".title").innerHTML = feature.properties.name;
+		infoPanel.style.display = "block"
 	}
+
+	function onPopupClose() {
+		infoPanel.style.display = "none"
+	}
+
+	var infoPanel = document.querySelector("#info .wrapper");
+	onPopupClose();
+
+	map.on('popupopen', args => onPopupOpen(args.popup.feature));
+	map.on('popupclose', onPopupClose);
 
 	function onEachFeature(feature, layer) {
 		// does this feature have a property named popupContent?
 		if (feature.properties && feature.properties.name) {
-			layer.bindPopup(getPopupContent(feature));
+			var title = "<h1>" + feature.properties.name + "</h1>";
+			var popupOptions = { keepInView: true };
+			var popup = L.popup(popupOptions, layer);
+			popup.setContent(title);
+			popup.feature = feature;
+			layer.bindPopup(popup);
 		}
 	}
 
