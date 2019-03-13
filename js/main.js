@@ -34,8 +34,8 @@
 	map.addLayer(osm);
 
 	function getPopupContent(feature) {
-		//return feature.properties.name;
-		return "<h1>" + feature.properties.name + "</h1><img src='img/locations/dummy.jpg' />";
+		return "<h1>" + feature.properties.name + "</h1>";
+		//return "<h1>" + feature.properties.name + "</h1><img src='img/locations/dummy.jpg' />";
 	}
 
 	function onEachFeature(feature, layer) {
