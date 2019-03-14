@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "event-emitter-es6": "^1.1.5",
     "leaflet": "^1.4.0",
     "leaflet.snogylop": "^0.4.0"
   }

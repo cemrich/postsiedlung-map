@@ -1,31 +1,28 @@
+import EventEmitter from 'event-emitter-es6';
+
+import 'leaflet';
+import './../deps/stamen/tile.stamen.js';
+import 'leaflet_css';
+
 import geoData from './../data/geodata.json';
 import outlineData from './../data/outline.json';
+
 import Category from './Category';
 import Popup from './Popup';
 
-export default class Map {
+export default class Map extends EventEmitter {
 
 	constructor() {
+		super();
+
 		var map = new L.map('map');
 		map.setView([49.85672, 8.63896], 16);
 
 		var osm = new L.StamenTileLayer('toner');
 		map.addLayer(osm);
 
-		function onPopupOpen(feature) {
-			infoPanel.querySelector(".title").innerHTML = feature.properties.name;
-			infoPanel.style.display = "block"
-		}
-
-		function onPopupClose() {
-			infoPanel.style.display = "none"
-		}
-
-		var infoPanel = document.querySelector("#info .wrapper");
-		onPopupClose();
-
-		map.on('popupopen', args => onPopupOpen(args.popup.feature));
-		map.on('popupclose', onPopupClose);
+		map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
+		map.on('popupclose', () => this.emit('feature-changed', null));
 
 		function onEachFeature(feature, layer) {
 			new Popup(feature, layer);
