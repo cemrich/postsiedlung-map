@@ -1,4 +1,7 @@
-(function () {
+import geoData from './../data/geodata.json';
+import outlineData from './../data/outline.json';
+
+var init = function () {
 
 	var CustomIcon = L.Icon.Default.extend({
 		options: {
@@ -112,14 +115,8 @@
 		dataLayer.addTo(map);
 	}
 
-	// load outline
-	fetch('data/outline.geojson')
-		.then(response => response.json())
-		.then(onOutlineLoaded);
+	onOutlineLoaded(outlineData);
+	onGeodataLoaded(geoData);
+};
 
-	// load geo data
-	fetch('data/geodata.json')
-		.then(response => response.json())
-		.then(onGeodataLoaded);
-
-}());
+export {init};

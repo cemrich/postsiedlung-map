@@ -1,0 +1,35 @@
+{
+  "name": "karte-postsiedlung",
+  "version": "1.0.0",
+  "description": "Karte der Postsiedlung in Darmstadt",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cemrich/postsiedlung-map.git"
+  },
+  "author": "Christine Coenen",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/cemrich/postsiedlung-map/issues"
+  },
+  "homepage": "https://github.com/cemrich/postsiedlung-map#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "leaflet": "^1.4.0",
+    "leaflet.snogylop": "^0.4.0"
+  }
+}
