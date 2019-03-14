@@ -15,7 +15,7 @@ html, body, #map {
 	height: 100%;
 	position: absolute;
 	z-index: 1000;
-	overflow-y: scroll;
+	overflow-y: auto;
 	pointer-events: none;
 }
 #info::before {
