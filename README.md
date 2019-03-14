@@ -1,6 +1,11 @@
 # postsiedlung-map
 Karte der Postsiedlung in Darmstadt
 
+## Development
+
+- Build: ```npm run build```
+- Development: ```npm run start```
+
 ## Notizen
 
 ### Historische Karten

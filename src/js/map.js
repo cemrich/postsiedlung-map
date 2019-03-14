@@ -1,34 +1,8 @@
 import geoData from './../data/geodata.json';
 import outlineData from './../data/outline.json';
+import Category from './Category';
 
 var init = function () {
-
-	var CustomIcon = L.Icon.Default.extend({
-		options: {
-			imagePath: 'img/markers/',
-			shadowUrl: 'marker-shadow.png'
-		}
-	});
-
-	class Category {
-		static getForFeature(feature) {
-			return Category.all[feature.properties.category];
-		}
-
-		constructor(id, name, color) {
-			this.id = id;
-			this.name = name;
-			this.color = color;
-			this.icon = new CustomIcon({ iconUrl: 'marker-icon-' + this.id + '.png' });
-		}
-	}
-
-	Category.all = {
-		"playground": new Category("playground", "Spielplatz", "#000000"),
-		"school": new Category("school", "Schule", "#fdcc31"),
-		"building": new Category("building", "Gebäude", "#000000"),
-		"park": new Category("park", "Park", "#77b756")
-	};
 
 	var map = new L.map('map');
 	map.setView([49.85672, 8.63896], 16);
