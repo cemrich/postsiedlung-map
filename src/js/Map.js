@@ -5,82 +5,40 @@ import './../deps/stamen/tile.stamen.js';
 import 'leaflet_css';
 
 import geoData from './../data/geodata.json';
-import outlineData from './../data/outline.json';
 
 import Category from './Category';
-import Popup from './Popup';
+import OutlineLayer from './OutlineLayer';
+import CategoryLayer from './CategoryLayer';
+import LayerControl from './LayerControl';
 
 export default class Map extends EventEmitter {
 
 	constructor() {
 		super();
 
-		var map = new L.map('map');
-		map.setView([49.85672, 8.63896], 16);
+		const osm = new L.StamenTileLayer('toner');
+		const outlineLayer = new OutlineLayer();
 
-		var osm = new L.StamenTileLayer('toner');
-		map.addLayer(osm);
+		this.map = new L.map('map');
+		this.map.setView([49.85672, 8.63896], 16);
+		this.map.addLayer(osm);
+		this.map.addLayer(outlineLayer);
 
-		map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
-		map.on('popupclose', () => this.emit('feature-changed', null));
+		this.layerControl = new LayerControl();
+		this.layerControl.addBaseLayer(osm, 'Karte');
+		this.layerControl.addToMap(this.map);
 
-		function onEachFeature(feature, layer) {
-			new Popup(feature, layer);
+		this.map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
+		this.map.on('popupclose', () => this.emit('feature-changed', null));
+
+		this._addFeatures();
+	}
+
+	_addFeatures() {
+		for (let category of Object.values(Category.all)) {
+			const categoryLayer = new CategoryLayer(geoData, category);
+			this.layerControl.addCategoryLayer(categoryLayer);
+			this.map.addLayer(categoryLayer.layer);
 		}
-
-		function pointToLayer(feature, latlng) {
-			var category = Category.getForFeature(feature);
-			return L.marker(latlng, { icon: category.icon });
-		}
-
-		function onGeodataLoaded(json) {
-			function style(feature) {
-				var category = Category.getForFeature(feature);
-		    return {
-			    color: category.color,
-			    weight: 1,
-					opacity: 1,
-					fillOpacity: 0.2
-		    };
-			}
-
-			function categoryFilter(feature, layer) {
-				return feature.properties.category === category.id;
-			}
-
-			var layerControl = {};
-
-			for (var category of Object.values(Category.all)) {
-				var dataLayer = L.geoJSON(json, {
-					onEachFeature: onEachFeature,
-					pointToLayer: pointToLayer,
-					style: style,
-					filter: categoryFilter
-				});
-
-				layerControl[category.name] = dataLayer;
-				dataLayer.addTo(map);
-			}
-
-			L.control.layers(null, layerControl, {
-				collapsed: false
-			}).addTo(map);
-		}
-
-		function onOutlineLoaded(json) {
-			var style = {
-			    "color": "#000000",
-			    "weight": 0
-			};
-
-			var dataLayer = L.geoJSON(json, {
-				invert: true,
-			 	style: style
-			});
-			dataLayer.addTo(map);
-		}
-
-		onOutlineLoaded(outlineData);
-		onGeodataLoaded(geoData);
 	}
 }

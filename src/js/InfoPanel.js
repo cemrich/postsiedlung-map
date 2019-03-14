@@ -1,16 +1,23 @@
 export default class InfoPanel {
 	constructor() {
-		this.infoPanel = document.querySelector("#info .wrapper");
+		this._infoPanel = document.querySelector("#info .wrapper");
 		this.showFeature(null);
 	}
 
 	showFeature(feature) {
-		console.log(feature);
 		if (feature === null) {
-			this.infoPanel.style.display = "none";
+			this._hideFeature();
 		} else {
-			this.infoPanel.querySelector(".title").innerHTML = feature.properties.name;
-			this.infoPanel.style.display = "block"
+			this._showFeature(feature);
 		}
+	}
+
+	_showFeature(feature) {
+		this._infoPanel.querySelector(".title").innerHTML = feature.properties.name;
+		this._infoPanel.style.display = "block"
+	}
+
+	_hideFeature() {
+		this._infoPanel.style.display = "none";
 	}
 }
