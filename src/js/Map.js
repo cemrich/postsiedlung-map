@@ -18,9 +18,16 @@ export default class Map extends EventEmitter {
 
 		const osm = new L.StamenTileLayer('toner');
 		const outlineLayer = new OutlineLayer();
+		const center = [49.85672, 8.63896];
+		const panRadius = 0.01;
 
 		this.map = new L.map('map');
-		this.map.setView([49.85672, 8.63896], 16);
+		this.map.setView(center, 16);
+		this.map.setMinZoom(14);
+		this.map.setMaxBounds([
+			[center[0] - panRadius, center[1] - panRadius],
+			[center[0] + panRadius, center[1] + panRadius]
+		]);
 		this.map.addLayer(osm);
 		this.map.addLayer(outlineLayer);
 
