@@ -1,9 +1,20 @@
+@font-face {
+    font-family: "ItimRegular";
+    src: url("./../fonts/Itim-Regular.woff") format("woff"),
+			url("./../fonts/Itim-Regular.ttf")  format("truetype");
+}
+
 html, body, #map {
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
 	font-family: sans-serif;
 	font-size: 0.95em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "ItimRegular";
+	color: #4f4f7c;
 }
 
 p {
@@ -18,6 +29,10 @@ a:hover {
 	color: #333;
 }
 
+.leaflet-control-layers label {
+	font-family: "ItimRegular";
+}
+
 #map {
 	position: absolute;
 	width: 100%;
@@ -28,7 +43,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	bottom: -2px;
+	bottom: -1px;
 	z-index: 1000;
 	overflow-y: auto;
 	pointer-events: none;
@@ -40,13 +55,12 @@ a:hover {
 }
 
 #info .wrapper {
-	max-width: 85%;
-	width: 600px;
+	max-width: 600px;
 	background: rgba(255,255,255,0.95);;
 	padding: 1em 2em 1.5em 2em;
 	margin: auto;
 	pointer-events: auto;
-	border-radius: 4px;
+	border-radius: 12px 12px 0 0;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-clip: padding-box;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
