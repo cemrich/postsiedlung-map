@@ -3,20 +3,6 @@
   "features": [
     {
       "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.638927213543438,
-          49.85750935735035
-        ]
-      },
-      "properties": {
-        "name": "Quartierladen",
-        "category": "building"
-      }
-    },
-    {
-      "type": "Feature",
       "properties": {
         "name": "Akaziengarten",
         "category": "park",
@@ -88,25 +74,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Rondell",
-        "category": "building",
-        "text": "<p>Im Rondell in der Gartenmitte befand sich ein chinesisches Teehäuschen.</p>",
-        "hide": true
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.636058568954468,
-          49.861012234303104
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Fliederberg",
         "category": "park",
-        "text": "<p>Im Jahr 1817, dem Hungerjahr nach den Napoleonischen Kriegen, ließ Großherzog Ludwig I. als „Notstandsarbeit“ einen Garten auf dem Grundstück seiner Schwiegertochter anlegen. Neben der Anlage des Gartens wurde am östlichen Rand der noch heute erhaltene Fliederberg als Aussichtshügel aufgeschüttet, der aufgrund seiner Entstehung noch lange Zeit im Volksmund den Namen „Hungerberg“ führte. Erzählungen zufolge beteiligten sich auch wohlhabende Bürger freiwillig an den Arbeiten und überließen ihren Verdienst den Bedürftigen.</p><p>Während der Fliederberg nach Kriegsende nur mit Flieder und einzelnen Platanen bewachsen war, wurden die Fliedersträucher in dern 1980er Jahren im Rahmen von „Pflegemaßnahmen“ entfernt. Mittlerweile hat sich ein dichter Baumbestand auf Hängen und Aussichtsplatform gebildet, wodurch der ehemalige Aussichtshügel zu einem wertvollen Rückzugsort für Tiere und einem naturnahen Erlebnisspielraum für Kinder geworden ist. Da für mehrere Baumaßnahmen in der Vergangenheit Sand vom Fliederberg abgebaggert wurde, sind die westlichen Hänge heute in einem allmölichen Abrutschen begriffen. Um dem entgegenzuwirken und das Begehen und Befahren möglichst einzuschränken, ist der historische Aufgang zur Plattform aktuell nicht nutzbar.</p>",
+        "text": "<p>Im Jahr 1817, dem Hungerjahr nach den Napoleonischen Kriegen, ließ Großherzog Ludwig I. als „Notstandsarbeit“ einen Garten auf dem Grundstück seiner Schwiegertochter anlegen. Neben der Anlage des Gartens wurde am östlichen Rand der noch heute erhaltene Fliederberg als Aussichtshügel aufgeschüttet, der aufgrund seiner Entstehung noch lange Zeit im Volksmund den Namen „Hungerberg“ führte. Erzählungen zufolge beteiligten sich auch wohlhabende Bürger freiwillig an den Arbeiten und überließen ihren Verdienst den Bedürftigen.</p><p>Während der Fliederberg nach Kriegsende nur mit Flieder und einzelnen Platanen bewachsen war, wurden die Fliedersträucher in dern 1980er Jahren im Rahmen von „Pflegemaßnahmen“ entfernt. Mittlerweile hat sich ein dichter Baumbestand auf Hängen und Aussichtsplatform gebildet, wodurch der ehemalige Aussichtshügel zu einem wertvollen Rückzugsort für Tiere und einem naturnahen Erlebnisspielraum für Kinder geworden ist. Da für mehrere Baumaßnahmen in der Vergangenheit Sand vom Fliederberg abgebaggert wurde, sind die westlichen Hänge heute in einem allmählichen Abrutschen begriffen. Um dem entgegenzuwirken und das Begehen und Befahren möglichst einzuschränken, ist der historische Aufgang zur Plattform aktuell nicht nutzbar.</p>",
         "textCitation": "<a href='http://www.proakaziengarten.de/'>ProAkaziengarten e.V.</a>"
       },
       "geometry": {
@@ -120,17 +90,19 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Maulbeerbäume",
-        "category": "park",
-        "text": "<p></p>",
-        "textCitation": "<a href='http://www.proakaziengarten.de/'>ProAkaziengarten e.V.</a>",
-        "hide": true
+        "name": "Kiosk",
+        "category": "building",
+        "images": [
+          { "name": "kiosk.jpg" }
+        ],
+        "text": "<p>Dieser denkmalgeschützte ehemalige Zeitungskiosk in der Spitze der Postsiedlung war bis ca. Ende der 1980er Jahre in Betrieb.</p>",
+        "stadtlexikon": "https://www.darmstadt-stadtlexikon.de/k/kioske.html"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.6350017786026,
-          49.8607010007183
+          8.642954528331757,
+          49.858200684840604
         ]
       }
     }

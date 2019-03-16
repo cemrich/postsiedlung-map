@@ -1,9 +1,12 @@
+import ImageDisplay from "./ImageDisplay";
+
 export default class InfoPanel {
 	constructor() {
-		this._infoPanel = document.querySelector("#info .wrapper");
-		this._title = this._infoPanel.querySelector(".title");
-		this._text = this._infoPanel.querySelector(".text");
-		this._textCitation = this._infoPanel.querySelector(".text-citation");
+		this._container = document.querySelector("#info .wrapper");
+		this._imageDisplay = new ImageDisplay();
+		this._title = this._container.querySelector(".title");
+		this._text = this._container.querySelector(".text");
+		this._textCitation = this._container.querySelector(".text-citation");
 		this.showFeature(null);
 	}
 
@@ -16,15 +19,17 @@ export default class InfoPanel {
 	}
 
 	_showFeature(feature) {
+		this._imageDisplay.showFeature(feature);
+
 		this._setText(this._title, feature.properties.name);
 		this._setText(this._text, feature.properties.text);
 		this._setText(this._textCitation, feature.properties.textCitation);
 
-		this._infoPanel.style.display = "block"
+		this._container.style.display = "block"
 	}
 
 	_hideFeature() {
-		this._infoPanel.style.display = "none";
+		this._container.style.display = "none";
 	}
 
 	_setText(htmlElement, text) {
