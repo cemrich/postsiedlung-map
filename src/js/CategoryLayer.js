@@ -31,6 +31,7 @@ export default class CategoryLayer {
 	}
 
 	_categoryFilter(feature, layer) {
-		return feature.properties.category === this.category.id;
+		return !feature.properties.hide &&
+			feature.properties.category === this.category.id;
 	}
 }

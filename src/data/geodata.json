@@ -18,126 +18,12 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "?",
-        "category": "building"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.639100193977356,
-          49.85653719416691
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kiosk",
-        "category": "building"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.642954528331757,
-          49.858200684840604
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "category": "playground",
-        "name": "Spielplatz"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.641315698623657,
-          49.85996094836533
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "category": "playground",
-        "name": "Spielplatz"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.639797568321228,
-          49.85753322041002
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "category": "playground",
-        "name": "Spielplatz"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.64047884941101,
-          49.85909292859068
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Spielplatz",
-        "category": "playground"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.63974392414093,
-          49.859182843713626
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
+        "name": "Akaziengarten",
         "category": "park",
-        "name": "Ingelheimer Garten"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              8.641412258148193,
-              49.86075978943792
-            ],
-            [
-              8.640221357345581,
-              49.860012821563224
-            ],
-            [
-              8.641465902328491,
-              49.85986066002477
-            ],
-            [
-              8.641675114631653,
-              49.86067679357768
-            ],
-            [
-              8.641412258148193,
-              49.86075978943792
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "category": "park",
-        "name": "Akaziengarten"
+        "text": "<p>Der Park wurde im Jahr 1817, damals weit außerhalb der Stadt gelegen, auf Veranlassung Großherzog Ludewigs I. angelegt. Von einem achteckigen zentralen Platz aus laufen strahlenförmig acht Wege durch den Park, in der Mitte stand ein Teehäuschen. An der Südostecke befand sich ein Bassin. Kurz vor dem Ersten Weltkrieg kaufte die Militärverwaltung den Park und errichtete ein Lazarett, das bis zur Teilzerstörung im Zweiten Weltkrieg genutzt wurde. Nach 1945 wurden die wieder aufgebauten Gebäude von verschiedenen Behörden und einer Schule genutzt. In der Südwestecke wurde ein Studentenwohnheim gebaut.</p><p>Seit 1986 stehen Park und Gebäude-Ensemble unter Denkmalschutz nach dem Hessischen Denkmalschutzgesetz.</p><p>Aufgrund des schlechten Sandbodens wurde der Park mit Akazien bepflanzt und erhielt daher seinen Namen.</p>",
+        "textCitation": "Seite „Akazienpark“. In: Wikipedia, Die freie Enzyklopädie. Bearbeitungsstand: 19. Juli 2016, 14:59 UTC. URL: <a href='https://de.wikipedia.org/w/index.php?title=Akazienpark&amp;oldid=156288632'>https://de.wikipedia.org/w/index.php?title=Akazienpark&amp;oldid=156288632</a> (Abgerufen: 16. März 2019, 13:04 UTC)",
+        "wikipedia": "https://de.wikipedia.org/wiki/Akazienpark",
+        "stadtlexikon": "https://www.darmstadt-stadtlexikon.de/a/akaziengarten/"
       },
       "geometry": {
         "type": "Polygon",
@@ -202,120 +88,49 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Heinrich-Heine-Schule",
-        "category": "school"
+        "name": "Rondell",
+        "category": "building",
+        "text": "<p>Im Rondell in der Gartenmitte befand sich ein chinesisches Teehäuschen.</p>",
+        "hide": true
       },
       "geometry": {
-        "type": "Polygon",
+        "type": "Point",
         "coordinates": [
-          [
-            [
-              8.640570044517517,
-              49.85634697848707
-            ],
-            [
-              8.640623688697813,
-              49.85628126744183
-            ],
-            [
-              8.640612959861755,
-              49.85622247327303
-            ],
-            [
-              8.641546368598938,
-              49.85601842236736
-            ],
-            [
-              8.641809225082397,
-              49.85669628306959
-            ],
-            [
-              8.641777038574217,
-              49.856786202652444
-            ],
-            [
-              8.641616106033325,
-              49.8568104117423
-            ],
-            [
-              8.640570044517517,
-              49.85634697848707
-            ]
-          ]
+          8.636058568954468,
+          49.861012234303104
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "category": "school",
-        "name": "Wilhelm-Leuschner-Schule"
+        "name": "Fliederberg",
+        "category": "park",
+        "text": "<p>Im Jahr 1817, dem Hungerjahr nach den Napoleonischen Kriegen, ließ Großherzog Ludwig I. als „Notstandsarbeit“ einen Garten auf dem Grundstück seiner Schwiegertochter anlegen. Neben der Anlage des Gartens wurde am östlichen Rand der noch heute erhaltene Fliederberg als Aussichtshügel aufgeschüttet, der aufgrund seiner Entstehung noch lange Zeit im Volksmund den Namen „Hungerberg“ führte. Erzählungen zufolge beteiligten sich auch wohlhabende Bürger freiwillig an den Arbeiten und überließen ihren Verdienst den Bedürftigen.</p><p>Während der Fliederberg nach Kriegsende nur mit Flieder und einzelnen Platanen bewachsen war, wurden die Fliedersträucher in dern 1980er Jahren im Rahmen von „Pflegemaßnahmen“ entfernt. Mittlerweile hat sich ein dichter Baumbestand auf Hängen und Aussichtsplatform gebildet, wodurch der ehemalige Aussichtshügel zu einem wertvollen Rückzugsort für Tiere und einem naturnahen Erlebnisspielraum für Kinder geworden ist. Da für mehrere Baumaßnahmen in der Vergangenheit Sand vom Fliederberg abgebaggert wurde, sind die westlichen Hänge heute in einem allmölichen Abrutschen begriffen. Um dem entgegenzuwirken und das Begehen und Befahren möglichst einzuschränken, ist der historische Aufgang zur Plattform aktuell nicht nutzbar.</p>",
+        "textCitation": "<a href='http://www.proakaziengarten.de/'>ProAkaziengarten e.V.</a>"
       },
       "geometry": {
-        "type": "Polygon",
+        "type": "Point",
         "coordinates": [
-          [
-            [
-              8.635382652282715,
-              49.85904105440515
-            ],
-            [
-              8.635554313659668,
-              49.85887505663724
-            ],
-            [
-              8.635709881782532,
-              49.85883009881027
-            ],
-            [
-              8.63874077796936,
-              49.85870214168919
-            ],
-            [
-              8.638815879821776,
-              49.85906872064436
-            ],
-            [
-              8.63900363445282,
-              49.85923125947977
-            ],
-            [
-              8.63825261592865,
-              49.85973616386416
-            ],
-            [
-              8.637667894363403,
-              49.859435296818326
-            ],
-            [
-              8.637351393699646,
-              49.859649708008334
-            ],
-            [
-              8.636788129806519,
-              49.85929696651336
-            ],
-            [
-              8.636546730995178,
-              49.85929350825066
-            ],
-            [
-              8.636203408241272,
-              49.85931425782316
-            ],
-            [
-              8.63599956035614,
-              49.859359215199596
-            ],
-            [
-              8.635881543159485,
-              49.85941108904356
-            ],
-            [
-              8.635382652282715,
-              49.85904105440515
-            ]
-          ]
+          8.638349175453186,
+          49.861503287659765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maulbeerbäume",
+        "category": "park",
+        "text": "<p></p>",
+        "textCitation": "<a href='http://www.proakaziengarten.de/'>ProAkaziengarten e.V.</a>",
+        "hide": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6350017786026,
+          49.8607010007183
         ]
       }
     }
