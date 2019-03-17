@@ -14,8 +14,8 @@ export default class Category {
 }
 
 Category.all = {
-  "playground": new Category("playground", "Spielplatz", "#000000"),
-  "school": new Category("school", "Schule", "#fdcc31"),
+  //"playground": new Category("playground", "Spielplatz", "#000000"),
+  //"school": new Category("school", "Schule", "#fdcc31"),
   "building": new Category("building", "Gebäude", "#000000"),
   "park": new Category("park", "Park", "#77b756")
 };
