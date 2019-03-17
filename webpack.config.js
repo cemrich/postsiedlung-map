@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: './src/components/main.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -22,7 +22,7 @@ module.exports = {
 			template: 'src/index.html'
 		}),
 		new CopyWebpackPlugin([
-			{ from: 'src/img/markers', to: 'img/markers' },
+			{ from: 'src/components/map/custom-icon/img', to: 'img/markers' },
 			{ from: 'src/img/locations', to: 'img/locations' }
 		]),
   ],

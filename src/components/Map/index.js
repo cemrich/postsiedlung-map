@@ -1,14 +1,15 @@
 import EventEmitter from 'event-emitter-es6';
 
 import 'leaflet';
-import './../deps/stamen/tile.stamen.js';
+import './../../deps/stamen/tile.stamen.js';
+import './style.css';
 import 'leaflet_css';
 
-import geoData from './../data/geodata.json';
+import geoData from './data/geodata.json';
 
 import Category from './Category';
-import OutlineLayer from './OutlineLayer';
-import CategoryLayer from './CategoryLayer';
+import OutlineLayer from './layers/OutlineLayer';
+import CategoryLayer from './layers/CategoryLayer';
 import LayerControl from './LayerControl';
 
 export default class Map extends EventEmitter {

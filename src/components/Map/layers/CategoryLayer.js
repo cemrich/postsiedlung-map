@@ -1,5 +1,5 @@
-import Category from './Category';
-import Popup from './Popup';
+import Category from './../Category';
+import Popup from './../Popup';
 
 export default class CategoryLayer {
 

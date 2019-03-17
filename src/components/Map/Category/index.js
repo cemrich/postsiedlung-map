@@ -1,4 +1,4 @@
-import CustomIcon from './CustomIcon';
+import CustomIcon from './../CustomIcon';
 
 export default class Category {
   static getForFeature(feature) {

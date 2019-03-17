@@ -1,4 +1,5 @@
-import './../css/style.css';
+import './style.css';
+
 import Map from './Map';
 import InfoPanel from './InfoPanel';
 

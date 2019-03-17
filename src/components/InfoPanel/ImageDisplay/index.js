@@ -1,3 +1,5 @@
+import "./style.css";
+
 export default class ImageDisplay {
 	constructor() {
 		this._container = document.querySelector("#info .image-display");

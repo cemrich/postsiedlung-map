@@ -1,0 +1,14 @@
+#info .image-display {
+	height: 350px;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	text-align: center;
+	background: white;
+	padding: 0.5em 0;
+}
+
+#info .image-display img {
+	height: 100%;
+	margin: 0 0.5em;
+}
