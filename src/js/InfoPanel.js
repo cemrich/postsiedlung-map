@@ -1,9 +1,11 @@
 import ImageDisplay from "./ImageDisplay";
+import LinkPanel from "./LinkPanel";
 
 export default class InfoPanel {
 	constructor() {
 		this._container = document.querySelector("#info .wrapper");
 		this._imageDisplay = new ImageDisplay();
+		this._linkPanel = new LinkPanel();
 		this._title = this._container.querySelector(".title");
 		this._text = this._container.querySelector(".text");
 		this._textCitation = this._container.querySelector(".text-citation");
@@ -20,6 +22,7 @@ export default class InfoPanel {
 
 	_showFeature(feature) {
 		this._imageDisplay.showFeature(feature);
+		this._linkPanel.showFeature(feature);
 
 		this._setText(this._title, feature.properties.name);
 		this._setText(this._text, feature.properties.text);
