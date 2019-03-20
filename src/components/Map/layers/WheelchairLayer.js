@@ -15,16 +15,20 @@ export default class WheelchairLayer {
 
 	_addMarkers(json) {
 		this.layer.attribution = json.osm3s.copyright;
-		json.elements.forEach(marker => this._addMarker(marker));
+		const elementMap = {};
+		json.elements.forEach(element => elementMap[element.id] = element);
+		json.elements.forEach(marker => this._addMarker(marker, elementMap));
 	}
 
-	_addMarker(element) {
-		if (element.type === 'way' || !element.tags) {
-			// this is a polygon or part of a polygon
-			// TODO: implement ways/areas
-			return;
+	_addMarker(element, elementMap) {
+		if (element.type === 'way') {
+			this._addWayMarker(element, elementMap);
+		} else if (element.tags) {
+			this._addLatLonMarker(element);
 		}
+	}
 
+	_addLatLonMarker(element) {
 		const icon = L.divIcon({
 			html: element.tags.name,
 			className: 'wheelchair-icon wheelchair-' + element.tags.wheelchair
@@ -32,5 +36,17 @@ export default class WheelchairLayer {
 		const marker = L.marker([element.lat, element.lon], { icon: icon });
 
 		this.layer.addLayer(marker);
+	}
+
+	_addWayMarker(element, elementMap) {
+		const latLons = element.nodes
+			.map(node => elementMap[node])
+			.map(waypoint => [waypoint.lat, waypoint.lon])
+			.reduce((last, current) => [last[0]+current[0], last[1]+current[1]]);
+
+		const latLon = [latLons[0] / element.nodes.length, latLons[1] / element.nodes.length];
+		element.lat = latLon[0];
+		element.lon = latLon[1];
+		this._addLatLonMarker(element);
 	}
 }
