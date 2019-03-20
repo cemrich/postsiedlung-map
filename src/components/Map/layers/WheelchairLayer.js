@@ -6,7 +6,9 @@ export default class WheelchairLayer {
 
 	constructor(map) {
 		this.map = map;
-		this.layer = L.layerGroup();
+		this.layer = L.layerGroup(null, {
+			attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		});
 
 		fetch(url)
 		  .then(response => response.json())
@@ -14,7 +16,6 @@ export default class WheelchairLayer {
 	}
 
 	_addMarkers(json) {
-		this.layer.attribution = json.osm3s.copyright;
 		const elementMap = {};
 		json.elements.forEach(element => elementMap[element.id] = element);
 		json.elements.forEach(marker => this._addMarker(marker, elementMap));
