@@ -1,0 +1,31 @@
+.wheelchair-icon {
+	width: 10px !important;
+	height: 10px !important;
+	border-radius: 5px;
+	font-family: "ItimRegular";
+	font-size: 0;
+}
+
+.wheelchair-icon:hover {
+	width: auto !important;
+	height: auto !important;
+	background: white;
+	box-shadow: 2px 2px 10px gray;
+	padding: 0.6em 0.8em;
+	border-radius: 0 10px 10px 10px;
+	font-size: 1.3em;
+	z-index: 3000 !important;
+}
+
+.wheelchair-icon.wheelchair-limited {
+	background-color: #fdcc31;
+}
+
+.wheelchair-icon.wheelchair-no {
+	background-color: #cc0050;
+	color: white;
+}
+
+.wheelchair-icon.wheelchair-yes {
+	background-color: #77b756;
+}

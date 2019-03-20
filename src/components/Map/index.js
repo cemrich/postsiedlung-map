@@ -10,6 +10,7 @@ import geoData from './data/geodata.json';
 import Category from './Category';
 import OutlineLayer from './layers/OutlineLayer';
 import CategoryLayer from './layers/CategoryLayer';
+import WheelchairLayer from './layers/WheelchairLayer';
 import LayerControl from './LayerControl';
 
 export default class Map extends EventEmitter {
@@ -32,8 +33,12 @@ export default class Map extends EventEmitter {
 		this.map.addLayer(osm);
 		this.map.addLayer(outlineLayer);
 
+		const wheelchairLayer = new WheelchairLayer(this.map);
+		this.map.addLayer(wheelchairLayer.layer);
+
 		this.layerControl = new LayerControl();
 		this.layerControl.addBaseLayer(osm, 'Karte');
+		this.layerControl._layer.addOverlay(wheelchairLayer.layer, 'Zugänglichkeit');
 		this.layerControl.addToMap(this.map);
 
 		this.map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
