@@ -1,6 +1,6 @@
 import './style.css';
 
-const url = "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];(node[wheelchair][name](49.846119189527,8.6337089538574,49.863439787456,8.6450386047363);way[wheelchair][name](49.846119189527,8.6337089538574,49.863439787456,8.6450386047363););out;>;out skel qt;";
+const url = "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:49.846119189527,8.6337089538574,49.863439787456,8.6450386047363];(node[wheelchair][name];way[wheelchair][name];);out;>;out skel qt;";
 
 export default class WheelchairLayer {
 
