@@ -14,8 +14,8 @@ export default class LayerControl {
 		this._layer.addBaseLayer(layer, name);
 	}
 
-	addCategoryLayer(categoryLayer) {
-		this._layer.addOverlay(categoryLayer.layer, categoryLayer.category.name);
+	addOverlay(layer, name) {
+		this._layer.addOverlay(layer, name);
 	}
 
 	addToMap(map) {

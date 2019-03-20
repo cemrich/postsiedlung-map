@@ -38,7 +38,7 @@ export default class Map extends EventEmitter {
 
 		this.layerControl = new LayerControl();
 		this.layerControl.addBaseLayer(osm, 'Karte');
-		this.layerControl._layer.addOverlay(wheelchairLayer.layer, 'Zugänglichkeit');
+		this.layerControl.addOverlay(wheelchairLayer.layer, 'Zugänglichkeit');
 		this.layerControl.addToMap(this.map);
 
 		this.map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
@@ -48,10 +48,14 @@ export default class Map extends EventEmitter {
 	}
 
 	_addFeatures() {
+		const historyLayer = L.layerGroup();
+
 		for (let category of Object.values(Category.all)) {
 			const categoryLayer = new CategoryLayer(geoData, category);
-			this.layerControl.addCategoryLayer(categoryLayer);
-			this.map.addLayer(categoryLayer.layer);
+			historyLayer.addLayer(categoryLayer.layer);
 		}
+
+		this.layerControl.addOverlay(historyLayer, 'Geschichte');
+		historyLayer.addTo(this.map);
 	}
 }
