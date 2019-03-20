@@ -4,6 +4,7 @@
 	border-radius: 5px;
 	font-family: "ItimRegular";
 	font-size: 0;
+	line-height: 1.2em;
 }
 
 .wheelchair-icon:hover {
@@ -17,15 +18,35 @@
 	z-index: 3000 !important;
 }
 
+.wheelchair-icon:hover::after {
+	display: block;
+	font-size: 0.6em;
+	font-family: sans-serif;
+	white-space: nowrap;
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	border-top: 1px solid black;
+}
+
 .wheelchair-icon.wheelchair-limited {
 	background-color: #fdcc31;
+}
+.wheelchair-icon.wheelchair-limited::after {
+	content: "Teilweise rollstuhlgerecht";
 }
 
 .wheelchair-icon.wheelchair-no {
 	background-color: #cc0050;
 	color: white;
 }
+.wheelchair-icon.wheelchair-no::after {
+	content: "Nicht rollstuhlgerecht";
+	border-color: white;
+}
 
 .wheelchair-icon.wheelchair-yes {
 	background-color: #77b756;
+}
+.wheelchair-icon.wheelchair-yes::after {
+	content: "Voll rollstuhlgerecht";
 }
