@@ -30,11 +30,21 @@ export default class WheelchairLayer {
 	}
 
 	_addLatLonMarker(element) {
-		const icon = L.divIcon({
-			html: element.tags.name,
-			className: 'wheelchair-icon wheelchair-' + element.tags.wheelchair
+		const marker = L.circleMarker([element.lat, element.lon], {
+			className: 'wheelchair-icon wheelchair-' + element.tags.wheelchair,
+			radius: 8,
+			weight: 2
 		});
-		const marker = L.marker([element.lat, element.lon], { icon: icon });
+
+		var content = '<span class="name">' + element.tags.name + '</span>';
+		content += '<div class="category"><span class="icon">' +
+			this._getCategoryIcon(element) + '</span>' +
+			this._getCategoryDescription(element) + '</div>';
+
+		marker.bindTooltip(content, {
+			className: 'wheelchair-tooltip wheelchair-' + element.tags.wheelchair,
+			opacity: 0.95
+		});
 
 		this.layer.addLayer(marker);
 	}
@@ -49,5 +59,21 @@ export default class WheelchairLayer {
 		element.lat = latLon[0];
 		element.lon = latLon[1];
 		this._addLatLonMarker(element);
+	}
+
+	_getCategoryDescription(element) {
+		switch (element.tags.wheelchair) {
+			case 'yes': return 'Voll rollstuhlgerecht.'
+			case 'no': return 'Nicht rollstuhlgerecht.'
+			default: return 'Teilweise rollstuhlgerecht.'
+		}
+	}
+
+	_getCategoryIcon(element) {
+		switch (element.tags.wheelchair) {
+			case 'yes': return '✓'
+			case 'no': return '✕'
+			default: return '!'
+		}
 	}
 }
