@@ -1,6 +1,6 @@
 import './style.css';
 
-const url = "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:49.846119189527,8.6337089538574,49.863439787456,8.6450386047363];(node[wheelchair][name];way[wheelchair][name];);out;>;out skel qt;";
+const url = "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:49.845486,8.631064,49.864687,8.64823];(node[name][wheelchair];node[name][amenity];node[name][shop];node[name][public_transport];node[name][leisure];way[name][wheelchair];way[name][shop];way[name][amenity];way[name][leisure];);out;>;out skel qt;";
 
 export default class WheelchairLayer {
 
@@ -12,6 +12,7 @@ export default class WheelchairLayer {
 
 		fetch(url)
 		  .then(response => response.json())
+			.then(json => { console.log(json); return json; })
 			.then(json => this._addMarkers(json));
 	}
 
@@ -30,19 +31,20 @@ export default class WheelchairLayer {
 	}
 
 	_addLatLonMarker(element) {
+		const category = this._getCategory(element);
 		const marker = L.circleMarker([element.lat, element.lon], {
-			className: 'wheelchair-icon wheelchair-' + element.tags.wheelchair,
+			className: 'wheelchair-icon wheelchair-' + category,
 			radius: 8,
 			weight: 2
 		});
 
-		var content = '<span class="name">' + element.tags.name + '</span>';
+		let content = '<span class="name">' + element.tags.name + '</span>';
 		content += '<div class="category"><span class="icon">' +
-			this._getCategoryIcon(element) + '</span>' +
-			this._getCategoryDescription(element) + '</div>';
+			this._getCategoryIcon(category) + '</span>' +
+			this._getCategoryDescription(category) + '</div>';
 
 		marker.bindTooltip(content, {
-			className: 'wheelchair-tooltip wheelchair-' + element.tags.wheelchair,
+			className: 'wheelchair-tooltip wheelchair-' + category,
 			opacity: 0.95
 		});
 
@@ -61,19 +63,30 @@ export default class WheelchairLayer {
 		this._addLatLonMarker(element);
 	}
 
-	_getCategoryDescription(element) {
+	_getCategory(element) {
 		switch (element.tags.wheelchair) {
-			case 'yes': return 'Voll rollstuhlgerecht.'
-			case 'no': return 'Nicht rollstuhlgerecht.'
-			default: return 'Teilweise rollstuhlgerecht.'
+			case 'yes': return 'yes'
+			case 'no': return 'no'
+			case 'limited': return 'limited'
+			default: return "unknown"
 		}
 	}
 
-	_getCategoryIcon(element) {
-		switch (element.tags.wheelchair) {
+	_getCategoryDescription(category) {
+		switch (category) {
+			case 'yes': return 'Voll rollstuhlgerecht.'
+			case 'no': return 'Nicht rollstuhlgerecht.'
+			case 'limited': return 'Teilweise rollstuhlgerecht.'
+			default: return 'Unbekannt'
+		}
+	}
+
+	_getCategoryIcon(category) {
+		switch (category) {
 			case 'yes': return '✓'
 			case 'no': return '✕'
-			default: return '!'
+			case 'limited': return '!'
+			default: return '?'
 		}
 	}
 }

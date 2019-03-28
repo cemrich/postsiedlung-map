@@ -20,6 +20,13 @@
 	margin-right: 0.5em;
 }
 
+.wheelchair-tooltip.wheelchair-unknown .category .icon,
+.wheelchair-icon.wheelchair-unknown {
+	background-color: #555555;
+	fill: #555555;
+	stroke: #555555;
+}
+
 .wheelchair-tooltip.wheelchair-limited .category .icon,
 .wheelchair-icon.wheelchair-limited {
 	background-color: #fdcc31;
