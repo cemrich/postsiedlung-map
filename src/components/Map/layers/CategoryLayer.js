@@ -23,6 +23,7 @@ export default class CategoryLayer {
 	}
 
 	_onEachFeature(feature, layer) {
+		feature.featureType = 'history';
 		new Popup(feature, layer);
 	}
 

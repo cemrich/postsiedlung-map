@@ -1,11 +1,11 @@
-.wheelchair-tooltip {
-	font-family: "ItimRegular";
+.wheelchair-tooltip .name {
 	font-size: 1.6em;
+	line-height: 1.2em;
+	margin-bottom: 0.4em;
 }
 
 .wheelchair-tooltip .category {
-	font-family: sans-serif;
-	font-size: 0.7em;
+	font-size: 1.1em;
 }
 
 .wheelchair-tooltip .category .icon {

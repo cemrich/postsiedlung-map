@@ -23,6 +23,8 @@ export default class WheelchairLayer {
 	}
 
 	_addMarker(element, elementMap) {
+		element.featureType = 'wheelchair';
+
 		if (element.type === 'way') {
 			this._addWayMarker(element, elementMap);
 		} else if (element.tags) {
@@ -38,15 +40,21 @@ export default class WheelchairLayer {
 			weight: 2
 		});
 
-		let content = '<span class="name">' + element.tags.name + '</span>';
+		let content = '<h1 class="name">' + element.tags.name + '</h1>';
 		content += '<div class="category"><span class="icon">' +
 			this._getCategoryIcon(category) + '</span>' +
 			this._getCategoryDescription(category) + '</div>';
 
-		marker.bindTooltip(content, {
+		const popupOptions = {
 			className: 'wheelchair-tooltip wheelchair-' + category,
-			opacity: 0.95
-		});
+			opacity: 0.95,
+			keepInView: true
+		};
+
+		const popup = L.popup(popupOptions, marker);
+		popup.setContent(content);
+		popup.feature = element;
+		marker.bindPopup(popup);
 
 		this.layer.addLayer(marker);
 	}

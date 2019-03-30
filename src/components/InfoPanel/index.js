@@ -11,18 +11,10 @@ export default class InfoPanel {
 		this._title = this._container.querySelector(".title");
 		this._text = this._container.querySelector(".text");
 		this._textCitation = this._container.querySelector(".text-citation");
-		this.showFeature(null);
+		this.hideFeature();
 	}
 
 	showFeature(feature) {
-		if (feature === null) {
-			this._hideFeature();
-		} else {
-			this._showFeature(feature);
-		}
-	}
-
-	_showFeature(feature) {
 		this._imageDisplay.showFeature(feature);
 		this._linkPanel.showFeature(feature);
 
@@ -33,7 +25,7 @@ export default class InfoPanel {
 		this._container.style.display = "block"
 	}
 
-	_hideFeature() {
+	hideFeature() {
 		this._container.style.display = "none";
 	}
 

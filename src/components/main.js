@@ -7,7 +7,13 @@ const map = new Map();
 const infoPanel = new InfoPanel();
 
 function onFeatureChanged(feature) {
-	infoPanel.showFeature(feature);
+	console.log('onFeatureChanged', feature);
+
+	if (feature === null) {
+		infoPanel.hideFeature();
+	} else if (feature.featureType === 'history') {
+		infoPanel.showFeature(feature);
+	}
 }
 
 map.on('feature-changed', onFeatureChanged);
