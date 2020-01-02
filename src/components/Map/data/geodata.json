@@ -214,6 +214,27 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64275,
+          49.85838
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 132",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr132_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
     }
   ]
 }
