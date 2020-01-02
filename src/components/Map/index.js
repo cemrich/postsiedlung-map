@@ -10,7 +10,6 @@ import geoData from './data/geodata.json';
 import Category from './Category';
 import OutlineLayer from './layers/OutlineLayer';
 import CategoryLayer from './layers/CategoryLayer';
-import WheelchairLayer from './layers/WheelchairLayer';
 import LayerControl from './LayerControl';
 
 export default class Map extends EventEmitter {
@@ -35,16 +34,12 @@ export default class Map extends EventEmitter {
 			[center[0] + panRadius, center[1] + panRadius]
 		]);
 
-		const wheelchairLayer = new WheelchairLayer(this.map);
-		const wheelchairLayerGroup = L.layerGroup([wikimediaLayer, outlineLayer, wheelchairLayer.layer]);
-		this.map.addLayer(wheelchairLayerGroup);
-
 		const historyLayer = this._getHistoryLayer();
 		const historyLayerGroup = L.layerGroup([stamenLayer, outlineLayer, historyLayer]);
+		this.map.addLayer(historyLayerGroup);
 
 		this.layerControl = new LayerControl();
 		this.layerControl.addBaseLayer(historyLayerGroup, 'Geschichte');
-		this.layerControl.addBaseLayer(wheelchairLayerGroup, 'Zugänglichkeit');
 		this.layerControl.addToMap(this.map);
 
 		this.map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
