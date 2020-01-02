@@ -172,6 +172,48 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64229,
+          49.86143
+        ]
+      },
+      "properties": {
+        "name": "Bäckerei Bormuth",
+        "category": "building",
+        "images": [
+          {
+            "name": "bormuth_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64274,
+          49.85814
+        ]
+      },
+      "properties": {
+        "name": "Moltkestraße 1",
+        "category": "building",
+        "images": [
+          {
+            "name": "moltkestr1_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
     }
   ]
 }
