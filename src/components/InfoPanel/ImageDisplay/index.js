@@ -16,7 +16,6 @@ export default class ImageDisplay {
 	_showFeature(feature) {
 		this._container.innerHTML = "";
 		feature.properties.images.forEach(image => this._addImage(image));
-		this._container.style.display = "block";
 	}
 
 	_hideFeature() {
@@ -24,8 +23,17 @@ export default class ImageDisplay {
 	}
 
 	_addImage(image) {
+		const imageContainerDom = document.createElement('div');
 		const imageDom = document.createElement('img');
+		const infoText = document.createElement('span');
+
+		imageContainerDom.className = "container";
+		infoText.className = "info";
+		infoText.innerHTML = image.credits + " (" + image.year + ")";
 		imageDom.src = 'img/locations/' + image.name;
-		this._container.appendChild(imageDom);
+
+		imageContainerDom.appendChild(infoText);
+		imageContainerDom.appendChild(imageDom);
+		this._container.appendChild(imageContainerDom);
 	}
 }

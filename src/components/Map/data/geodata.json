@@ -130,7 +130,16 @@
         "name": "Kiosk",
         "category": "building",
         "images": [
-          { "name": "kiosk.jpg" }
+          {
+            "name": "kiosk_00.jpg" ,
+            "year": "1950",
+            "credits": "Bastian Ripper"
+          },
+          {
+            "name": "kiosk_01.jpg",
+            "year": "2009",
+            "credits": "Bastian Ripper"
+          }
         ],
         "text": "<p>Dieser denkmalgeschützte ehemalige Zeitungskiosk in der Spitze der Postsiedlung war bis ca. Ende der 1980er Jahre in Betrieb.</p>",
         "stadtlexikon": "https://www.darmstadt-stadtlexikon.de/k/kioske.html"

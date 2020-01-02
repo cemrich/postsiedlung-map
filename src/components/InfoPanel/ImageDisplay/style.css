@@ -3,12 +3,29 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
-	text-align: center;
+	display: flex;
+	align-items: center;
 	background: white;
-	padding: 0.5em 0;
+	padding-bottom: 1em;
 }
 
-#info .image-display img {
-	height: 100%;
+#info .image-display .container {
+	position: relative;
 	margin: 0 0.5em;
+}
+#info .image-display .container:first-child {
+	margin-left: 0;
+}
+#info .image-display .container:last-child {
+	margin-right: 0;
+}
+
+#info .image-display .container .info {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.95);
+	padding: 0.3em 0.5em;
+	font-size: 0.8em;
+	color: #555;
 }
