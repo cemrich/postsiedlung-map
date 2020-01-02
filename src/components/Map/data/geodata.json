@@ -235,6 +235,269 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64553,
+          49.85844
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 107",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr107_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64713,
+          49.85826
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 96",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr96_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64632,
+          49.85843
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 97",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr97_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64475,
+          49.85847
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 115",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr115_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64496,
+          49.85845
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 113",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr113_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64477,
+          49.85829
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 120",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr120_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64459,
+          49.85828
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 122",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr122_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64605,
+          49.85826
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 104",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr104_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64623,
+          49.85825
+        ]
+      },
+      "properties": {
+        "name": "Bessunger Str. 102",
+        "category": "building",
+        "images": [
+          {
+            "name": "bessungerstr102_2019_00.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          },
+          {
+            "name": "bessungerstr102_2019_01.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Technisches Stadthaus",
+        "category": "building",
+        "images": [
+          {
+            "name": "technisches_stadthaus_2019_00.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          },
+          {
+            "name": "technisches_stadthaus_2019_01.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          },
+          {
+            "name": "technisches_stadthaus_2019_02.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.641546368598938,
+              49.85956325199782
+            ],
+            [
+              8.641299605369568,
+              49.85866410031761
+            ],
+            [
+              8.641304969787598,
+              49.85854305939049
+            ],
+            [
+              8.643187880516052,
+              49.85848080965278
+            ],
+            [
+              8.64324152469635,
+              49.85945258807858
+            ],
+            [
+              8.641546368598938,
+              49.85956325199782
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64668,
+          49.85823
+        ]
+      },
+      "properties": {
+        "name": "Heidelberger Str. 87",
+        "category": "building"
+      }
     }
   ]
 }
