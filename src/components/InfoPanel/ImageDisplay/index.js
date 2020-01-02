@@ -16,7 +16,7 @@ export default class ImageDisplay {
 	_showFeature(feature) {
 		this._container.innerHTML = "";
 		feature.properties.images.forEach(image => this._addImage(image));
-			this._container.style.display = "block";
+			this._container.style.display = "flex";
 	}
 
 	_hideFeature() {
