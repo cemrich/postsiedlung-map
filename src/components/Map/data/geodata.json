@@ -142,6 +142,20 @@
           49.858200684840604
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.638927213543438,
+          49.85750935735035
+        ]
+      },
+      "properties": {
+        "name": "Quartierladen",
+        "category": "building"
+      }
     }
   ]
 }
