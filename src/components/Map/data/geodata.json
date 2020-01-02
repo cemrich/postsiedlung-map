@@ -137,7 +137,7 @@
           },
           {
             "name": "kiosk_01.jpg",
-            "year": "2009",
+            "year": "2019",
             "credits": "Bastian Ripper"
           }
         ],
@@ -163,7 +163,14 @@
       },
       "properties": {
         "name": "Quartierladen",
-        "category": "building"
+        "category": "building",
+        "images": [
+          {
+            "name": "quartierladen.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
       }
     }
   ]
