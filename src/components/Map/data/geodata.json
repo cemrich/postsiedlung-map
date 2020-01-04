@@ -496,7 +496,56 @@
       },
       "properties": {
         "name": "Heidelberger Str. 87",
-        "category": "building"
+        "category": "building",
+        "images": [
+          {
+            "name": "heidelbergerstr87_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64415,
+          49.85867
+        ]
+      },
+      "properties": {
+        "name": "Donnersbergring 43",
+        "category": "building",
+        "images": [
+          {
+            "name": "donnersbergring43_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64399,
+          49.85822
+        ]
+      },
+      "properties": {
+        "name": "Donnersbergring 45",
+        "category": "building",
+        "images": [
+          {
+            "name": "donnersbergring45_2019.jpg" ,
+            "year": "2019",
+            "credits": "Bastian Ripper"
+          }
+        ]
       }
     }
   ]
