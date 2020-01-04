@@ -164,6 +164,13 @@
       "properties": {
         "name": "Quartierladen",
         "category": "building",
+        "text": "<p>Heute ein Nachbarschaftstreff, diente der Laden davor als Baubüro der Bauverein AG. Vorher befand sich hier eine zentrale Toto-Lotto Annahme-Stelle, 'Edeka Franz' und das Lebensmittelgeschäft Kluber.</p>",
+        "links": [
+          {
+            "url": "https://www.echo-online.de/lokales/darmstadt/gastbeitrag-erinnerung-an-den-laden-in-der-darmstadter-postsiedlung_20816123",
+            "title": "Gastbeitrag: Erinnerung an den Laden in der Darmstädter Postsiedlung"
+          }
+        ],
         "images": [
           {
             "name": "quartierladen.jpg" ,

@@ -18,7 +18,8 @@ export default class LinkPanel {
 	}
 
 	_hasLinks(feature) {
-		return this._linkTypes.some(linkType => feature.properties[linkType.id]);
+		return this._linkTypes.some(linkType => feature.properties[linkType.id]) ||
+			feature.properties.links;
 	}
 
 	_showFeature(feature) {
@@ -26,8 +27,15 @@ export default class LinkPanel {
 		this._linkTypes
 			.filter(linkType => feature.properties[linkType.id])
 			.forEach(linkType => {
-				this._showLinkType(feature, linkType)
+				this._showLinkType(feature.properties[linkType.id], linkType);
 			});
+
+		if (feature.properties.links) {
+			feature.properties.links
+				.forEach(link => {
+					this._showLinkType(link.url, { name: link.title });
+				});
+		}
 
 		this._container.style.display = "block"
 	}
@@ -36,11 +44,10 @@ export default class LinkPanel {
 		this._container.style.display = "none";
 	}
 
-	_showLinkType(feature, linkType) {
-		const linkUrl = feature.properties[linkType.id];
+	_showLinkType(url, linkType) {
 		const link = document.createElement("a");
 		link.innerHTML = linkType.name;
-		link.href = linkUrl;
+		link.href = url;
 		link.target = "_blank";
 
 		const listItem = document.createElement("li");
