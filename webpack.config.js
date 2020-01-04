@@ -23,7 +23,8 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin([
 			{ from: 'src/components/Map/CustomIcon/img', to: 'img/markers' },
-			{ from: 'src/img/locations', to: 'img/locations' }
+			{ from: 'src/img/locations', to: 'img/locations' },
+			{ from: 'src/img/maps', to: 'img/maps' }
 		]),
   ],
   module: {

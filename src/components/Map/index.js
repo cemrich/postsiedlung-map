@@ -34,19 +34,27 @@ export default class Map extends EventEmitter {
 			[center[0] + panRadius, center[1] + panRadius]
 		]);
 
-		const historyLayer = this._getHistoryLayer();
-		const historyLayerGroup = L.layerGroup([stamenLayer, outlineLayer, historyLayer]);
-		this.map.addLayer(historyLayerGroup);
+    const imageBounds = [[49.9049487, 8.6132276], [49.8439883, 8.6885816]];
+		const historicMap1906 = L.imageOverlay('img/maps/map_1906_railway.jpg', imageBounds);
+
+		const dataPointsLayer = this._getDataPoints();
+		const todayLayerGroup = L.layerGroup([stamenLayer, outlineLayer]);
+		const historyLayerGroup1906 = L.layerGroup([stamenLayer, historicMap1906, outlineLayer]);
+
+		this.map.addLayer(todayLayerGroup);
+		this.map.addLayer(dataPointsLayer);
 
 		this.layerControl = new LayerControl();
-		this.layerControl.addBaseLayer(historyLayerGroup, 'Geschichte');
+		this.layerControl.addBaseLayer(todayLayerGroup, 'Heute');
+		this.layerControl.addBaseLayer(historyLayerGroup1906, '1906');
+		this.layerControl.addOverlay(dataPointsLayer, 'Orte');
 		this.layerControl.addToMap(this.map);
 
 		this.map.on('popupopen', e => this.emit('feature-changed', e.popup.feature));
 		this.map.on('popupclose', () => this.emit('feature-changed', null));
 	}
 
-	_getHistoryLayer() {
+	_getDataPoints() {
 		const historyLayer = L.layerGroup();
 
 		for (let category of Object.values(Category.all)) {
