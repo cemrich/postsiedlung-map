@@ -10,5 +10,11 @@
     "title": "1927",
     "bounds": [[49.9015316, 8.6070371], [49.8436596, 8.7044227]],
     "attribution": "Karte von <a href='http://tudigit.ulb.tu-darmstadt.de/show/Sp_Da1927/0001'>Universitäts- und Landesbibliothek Darmstadt</a>, unter <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0 1.0</a>"
+  },
+  {
+    "fileName": "Sp_Da1937_0001.jpg",
+    "title": "1937",
+    "bounds": [[49.8994584, 8.6060285], [49.8238229, 8.6940479]],
+    "attribution": "Karte von <a href='http://tudigit.ulb.tu-darmstadt.de/show/Sp_Da1937/0001'>Universitäts- und Landesbibliothek Darmstadt</a>, unter <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0 1.0</a>"
   }
 ]
