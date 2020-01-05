@@ -1,7 +1,6 @@
 import EventEmitter from 'event-emitter-es6';
 
 import 'leaflet';
-import './../../deps/stamen/tile.stamen.js';
 import './style.css';
 import 'leaflet_css';
 
@@ -18,13 +17,12 @@ export default class Map extends EventEmitter {
 	constructor() {
 		super();
 
-		const stamenLayer = new L.StamenTileLayer('toner');
 		const outlineLayer = new OutlineLayer();
 		const center = [49.85672, 8.63896];
 		const panRadius = 0.01;
 
 		const wikimediaLayer = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
-			attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>'
+			attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia maps</a> | Map data © <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
 		});
 
 		this.map = new L.map('map');
@@ -36,7 +34,7 @@ export default class Map extends EventEmitter {
 		]);
 
 		const dataPointsLayer = this._getDataPoints();
-		const todayLayerGroup = L.layerGroup([stamenLayer, outlineLayer]);
+		const todayLayerGroup = L.layerGroup([wikimediaLayer, outlineLayer]);
 
 		this.layerControl = new LayerControl();
 		this.layerControl.addBaseLayer(todayLayerGroup, 'Heute');
@@ -48,7 +46,7 @@ export default class Map extends EventEmitter {
 
 		for (let historicMap of historicMapsData) {
 			const map = L.imageOverlay('img/maps/' + historicMap.fileName, historicMap.bounds, { attribution: historicMap.attribution });
-			const layerGroup = L.layerGroup([stamenLayer, map, outlineLayer]);
+			const layerGroup = L.layerGroup([wikimediaLayer, map, outlineLayer]);
 			this.layerControl.addBaseLayer(layerGroup, historicMap.title);
 		}
 
