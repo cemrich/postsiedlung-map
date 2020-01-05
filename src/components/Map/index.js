@@ -34,12 +34,17 @@ export default class Map extends EventEmitter {
 			[center[0] + panRadius, center[1] + panRadius]
 		]);
 
-    const imageBounds = [[49.9049487, 8.6132276], [49.8439883, 8.6885816]];
-		const historicMap1906 = L.imageOverlay('img/maps/map_1906_railway.jpg', imageBounds);
+		const historicMap1906 = L.imageOverlay('img/maps/map_1906_railway.jpg', [[49.9049487, 8.6132276], [49.8439883, 8.6885816]]);
+		const historicMap1927 = L.imageOverlay('img/maps/Sp_Da1927_0001.jpg',
+			[[49.9015316, 8.6070371], [49.8436596, 8.7044227]],
+			{
+				attribution: 'Karte von <a href="http://tudigit.ulb.tu-darmstadt.de/show/Sp_Da1927/0001">Universitäts- und Landesbibliothek Darmstadt</a>, unter <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>'
+			});
 
 		const dataPointsLayer = this._getDataPoints();
 		const todayLayerGroup = L.layerGroup([stamenLayer, outlineLayer]);
 		const historyLayerGroup1906 = L.layerGroup([stamenLayer, historicMap1906, outlineLayer]);
+		const historyLayerGroup1927 = L.layerGroup([stamenLayer, historicMap1927, outlineLayer]);
 
 		this.map.addLayer(todayLayerGroup);
 		this.map.addLayer(dataPointsLayer);
@@ -47,6 +52,7 @@ export default class Map extends EventEmitter {
 		this.layerControl = new LayerControl();
 		this.layerControl.addBaseLayer(todayLayerGroup, 'Heute');
 		this.layerControl.addBaseLayer(historyLayerGroup1906, '1906');
+		this.layerControl.addBaseLayer(historyLayerGroup1927, '1927');
 		this.layerControl.addOverlay(dataPointsLayer, 'Orte');
 		this.layerControl.addToMap(this.map);
 
